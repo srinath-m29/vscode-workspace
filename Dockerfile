@@ -33,7 +33,7 @@ ENV GIT_ASKPASS=/usr/local/bin/git-credential-cloudide
 
 # Copy backend application and install requirements
 COPY backend /app/backend
-RUN pip3 install --no-cache-dir --break-system-packages -r /app/backend/requirements.txt
+RUN pip3 install --no-cache-dir -r /app/backend/requirements.txt
 
 # Copy static frontend build output from builder stage
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
